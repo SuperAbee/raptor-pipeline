@@ -12,7 +12,7 @@ func installChart(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Fprintln(w, err)
 	} else {
-		fmt.Fprintln(w, output)
+		fmt.Fprintln(w, string(output))
 	}
 }
 
