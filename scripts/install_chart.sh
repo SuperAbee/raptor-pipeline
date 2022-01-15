@@ -4,4 +4,4 @@
 # helm package raptor-chart/
 # helm install raptor raptor-0.1.0.tgz
 
-echo install_chart running
+echo "install_chart running"

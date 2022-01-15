@@ -8,8 +8,12 @@ import (
 
 func installChart(w http.ResponseWriter, r *http.Request) {
 	cmd := exec.Command("./scripts/install_chart.sh")
-	err := cmd.Run()
-	fmt.Fprintln(w, err)
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		fmt.Fprintln(w, err)
+	} else {
+		fmt.Fprintln(w, output)
+	}
 }
 
 func main() {
