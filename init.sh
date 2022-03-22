@@ -20,10 +20,9 @@ then
 fi
 
 # go
-if [ ! -e /usr/lib/golang/bin/go ]
-then
-    yum install golang -y
-fi
+wget -c https://storage.googleapis.com/golang/go1.17.3.linux-amd64.tar.gz
+tar -C /usr/local/ -zxvf go1.17.3.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/profile
 
 # pipeline
 rm raptor-pipeline -rf
